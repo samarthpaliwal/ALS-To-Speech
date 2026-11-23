@@ -1,10 +1,18 @@
 # ALS-To-Speech
 
+> The repository name is a typo for ASL (American Sign Language). The project has nothing to do with ALS.
+
+> **Early project.** One of the first things I built, kept public as a record of where I started. Current work is on my [profile](https://github.com/samarthpaliwal).
+
+<!-- TODO: add a screenshot as docs/screenshot.png and uncomment.
+![Screenshot](docs/screenshot.png)
+-->
+
 A webcam-based American Sign Language (ASL) hand-sign recognizer written in Python. It uses MediaPipe Hands to extract 21 hand landmarks from each camera frame, stores those landmark vectors as training data, trains a scikit-learn Random Forest on them, and provides a classifier class that draws the predicted sign on a live frame. The repository name suggests a speech output stage, but no text-to-speech code is present; the project currently stops at recognizing the sign.
 
 ## Requirements
 
-- Python 3.9 to 3.11 (the committed `.pyc` file was built with 3.11; MediaPipe wheels are not available for every newer version)
+- Python 3.9 to 3.11 (MediaPipe wheels are not available for every newer version)
 - A webcam
 - Python packages: `opencv-python`, `mediapipe`, `numpy`, `scikit-learn`
 
@@ -84,4 +92,3 @@ Known inconsistencies in the current code:
 - `asl_recognition.py`: `GestureClassifier` class that loads `model.p` and annotates frames with the predicted sign.
 - `labels_dict.py`: identity mapping from model label to display string.
 - `test_imports.py`: prints the Python executable and OpenCV version.
-- `labels_dict.cpython-311.pyc`, `__pycache__.zip`: compiled bytecode artifacts committed by accident; safe to delete.
